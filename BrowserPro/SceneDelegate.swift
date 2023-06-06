@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import GoogleMobileAds
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,6 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         FirebaseApp.configure()
+        
+        FirebaseUtil.requestRemoteConfig()
+        
+        let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+        
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [uuid ]
         
         if let url = connectionOptions.urlContexts.first?.url {
             ApplicationDelegate.shared.application(

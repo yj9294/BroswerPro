@@ -11,13 +11,40 @@ class CleanViewController: UIViewController {
     
     @IBOutlet weak var animationView: UIImageView!
 
+    var isPresented = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            BrowserUtil.shared.clean(from: self)
-            FirebaseUtil.log(event: .cleanSuccess)
-            FirebaseUtil.log(event: .cleanAlert)
-            self.dismiss(animated: true)
+            self.loading()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 14.0) {
+            if !self.isPresented {
+                self.isPresented = true
+                self.cleaned()
+            }
+        }
+        GADUtil.share.load(.interstitial)
+    }
+    
+    func cleaned() {
+        BrowserUtil.shared.clean(from: self)
+        FirebaseUtil.log(event: .cleanSuccess)
+        FirebaseUtil.log(event: .cleanAlert)
+        self.dismiss(animated: true)
+    }
+    
+    func loading() {
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+            if GADUtil.share.isLoaded(.interstitial), !self.isPresented {
+                timer.invalidate()
+                self.isPresented = true
+                GADUtil.share.show(.interstitial, from: self) { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        self.cleaned()
+                    }
+                }
+            }
         }
     }
     

@@ -10,19 +10,48 @@ import UIKit
 
 class TabViewController: UIViewController {
     
+    @IBOutlet weak var adView: GADNativeView!
+    
+    var tabNativeAdImpressionDate = Date(timeIntervalSinceNow: -11)
+    var willAppear = false
+    
     var dataSource: [WebViewItem] {
         BrowserUtil.shared.webItems
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addADNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        willAppear = true
         FirebaseUtil.log(event: .tabShow)
+        GADUtil.share.load(.native)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        willAppear = false
+        GADUtil.share.close(.native)
+    }
+    
+    func addADNotification() {
+        NotificationCenter.default.addObserver(forName: .nativeUpdate, object: nil, queue: .main) { [weak self] noti in
+            guard let self = self else {return}
+            if let ad = noti.object as? NativeADModel, self.willAppear == true {
+                if self.tabNativeAdImpressionDate.timeIntervalSinceNow < -10 {
+                    self.adView.nativeAd = ad.nativeAd
+                    self.tabNativeAdImpressionDate = Date()
+                } else {
+                    NSLog("[ad] 10s tab 原生广告刷新或数据填充间隔.")
+                }
+            } else {
+                self.adView.nativeAd = nil
+            }
+        }
+    }
 }
 
 extension TabViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

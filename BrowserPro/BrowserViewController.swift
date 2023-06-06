@@ -20,6 +20,11 @@ class BrowserViewController: UIViewController {
     @IBOutlet weak var tabButton: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var cleanAlertView: UIView!
+    
+    @IBOutlet weak var adView: GADNativeView!
+    var willAppear = false
+    
+    var homeNativeAdImpressionDate = Date(timeIntervalSinceNow: -11)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +32,24 @@ class BrowserViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        willAppear = true
         IQKeyboardManager.shared.enable = true
         refreshStatus()
         addObserver()
-        
+        addADNotification()
         FirebaseUtil.log(event: .homeShow)
         
         ATTrackingManager.requestTrackingAuthorization { _ in
         }
+        
+        GADUtil.share.load(.native)
+        GADUtil.share.load(.interstitial)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        willAppear = false
+        GADUtil.share.close(.native)
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,6 +64,22 @@ class BrowserViewController: UIViewController {
             }
             vc.privacyHandle = {
                 self.performSegue(withIdentifier: "toPrivacyViewController", sender: nil)
+            }
+        }
+    }
+    
+    func addADNotification() {
+        NotificationCenter.default.addObserver(forName: .nativeUpdate, object: nil, queue: .main) { [weak self] noti in
+            guard let self = self else {return}
+            if let ad = noti.object as? NativeADModel, self.willAppear == true {
+                if self.homeNativeAdImpressionDate.timeIntervalSinceNow < -10 {
+                    self.adView.nativeAd = ad.nativeAd
+                    self.homeNativeAdImpressionDate = Date()
+                } else {
+                    NSLog("[ad] 10s home 原生广告刷新或数据填充间隔.")
+                }
+            } else {
+                self.adView.nativeAd = nil
             }
         }
     }
