@@ -31,7 +31,7 @@
 		C77344C22A283BFA003C96DE /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C77344C12A283BFA003C96DE /* FacebookAEM */; };
 		C77344C42A283BFA003C96DE /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C77344C32A283BFA003C96DE /* FacebookBasics */; };
 		C77344C62A283BFA003C96DE /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C77344C52A283BFA003C96DE /* FacebookCore */; };
-		C77344CA2A28412B003C96DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C77344C92A28412B003C96DE /* GoogleService-Info.plist */; };
+		C7EE49F62A308B7C006B6139 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7EE49F52A308B7C006B6139 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +53,8 @@
 		C77344AF2A26055E003C96DE /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		C77344B52A26F654003C96DE /* CleanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanViewController.swift; sourceTree = "<group>"; };
 		C77344B72A283140003C96DE /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtil.swift; sourceTree = "<group>"; };
-		C77344C92A28412B003C96DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C77344CB2A28424E003C96DE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7EE49F52A308B7C006B6139 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,8 @@
 		C77344832A249570003C96DE /* BrowserPro */ = {
 			isa = PBXGroup;
 			children = (
+				C7EE49F52A308B7C006B6139 /* GoogleService-Info.plist */,
 				C77344CB2A28424E003C96DE /* Info.plist */,
-				C77344C92A28412B003C96DE /* GoogleService-Info.plist */,
 				C77344A32A25D711003C96DE /* BrowserUtil.swift */,
 				C77344A52A25D71B003C96DE /* AppUtil.swift */,
 				C77344B72A283140003C96DE /* FirebaseUtil.swift */,
@@ -189,8 +189,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7EE49F62A308B7C006B6139 /* GoogleService-Info.plist in Resources */,
 				C77344912A249572003C96DE /* LaunchScreen.storyboard in Resources */,
-				C77344CA2A28412B003C96DE /* GoogleService-Info.plist in Resources */,
 				C773448E2A249572003C96DE /* Assets.xcassets in Resources */,
 				C773448C2A249570003C96DE /* Main.storyboard in Resources */,
 			);
@@ -361,9 +361,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59CN4J44AC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrowserPro/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
@@ -380,8 +380,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.BrowserPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.searchPro.browsers.fastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -396,9 +397,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59CN4J44AC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrowserPro/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
@@ -415,8 +416,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.BrowserPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.searchPro.browsers.fastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
