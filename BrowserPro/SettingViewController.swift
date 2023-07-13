@@ -30,9 +30,9 @@ class SettingViewController: UIViewController {
     
     @IBAction func share() {
         dismiss()
-        var url = "https://itunes.apple.com/cn/app/id"
+        var url = "https://itunes.apple.com/cn/app/id6449742481"
         if !BrowserUtil.shared.webItem.isNavigation {
-            url = BrowserUtil.shared.webItem.webView.url?.absoluteString ?? "https://itunes.apple.com/cn/app/id"
+            url = BrowserUtil.shared.webItem.webView.url?.absoluteString ?? "https://itunes.apple.com/cn/app/id6449742481"
         }
         let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         present(vc, animated: true)
@@ -55,7 +55,7 @@ class SettingViewController: UIViewController {
     
     @IBAction func rate() {
         dismiss()
-        let url = URL(string: "https://itunes.apple.com/cn/app/id")
+        let url = URL(string: "https://itunes.apple.com/cn/app/id6449742481")
         if let url = url {
             UIApplication.shared.open(url)
         }

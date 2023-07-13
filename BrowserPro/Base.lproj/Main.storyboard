@@ -1109,14 +1109,20 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdZ-3P-YK6">
                                 <rect key="frame" x="15" y="119" width="363" height="684"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">The following terms and conditions (the “Terms”) govern your use of the VPN services we provide (the “Service”) and their associated website domains (the “Site”). These Terms constitute a legally binding agreement (the “Agreement”) between you and Tap VPN. (the “Tap VPN”).
-
-Activation of your account constitutes your agreement to be bound by the Terms and a representation that you are at least eighteen (18) years of age, and that the registration information you have provided is accurate and complete.
-
-Tap VPN may update the Terms from time to time without notice. Any changes in the Terms will be incorporated into a revised Agreement that we will post on the Site. Unless otherwise specified, such changes shall be effective when they are posted. If we make material changes to these Terms, we will aim to notify you via email or when you log in at our Site.
-
-By using Tap VPN
-You agree to comply with all applicable laws and regulations in connection with your use of this service.regulations in connection with your use of this service.</string>
+                                <mutableString key="text">In order to download and use our software and services, when you download and use our website, software and services, we collect some standard information that browsers usually provide, such as: browser type, language preference, etc.
+How we will use the information 
+We will improve our applications or develop them to provide updates, features, services, development services, etc. based on your needs and feedback.
+Your personal information may be used in the following ways: to improve the experience of our browser services, to check and resolve potential problems. 
+If we are obligated by law to provide your information to third parties, we may provide your personal information to relevant law enforcement agencies or government departments to enforce or assist in enforcing certain legal or administrative proceedings.
+How we share information
+We may share your personal information internally.
+We may share your personal information with trusted partners or service providers.
+We will only share your personal information in accordance with this Privacy Policy, and we are committed to protecting and securing your personal information.
+Update 
+We may update these terms and conditions from time to time, and your continued use of our services will indicate your acceptance of our updated terms and conditions.
+Contact us
+If you have any questions about this Privacy Policy, you may contact us using the information below.
+lilin623@hotmail.com</mutableString>
                                 <color key="textColor" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1177,14 +1183,17 @@ You agree to comply with all applicable laws and regulations in connection with 
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97e-Vc-lpO">
                                 <rect key="frame" x="15" y="119" width="363" height="684"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">The following terms and conditions (the “Terms”) govern your use of the VPN services we provide (the “Service”) and their associated website domains (the “Site”). These Terms constitute a legally binding agreement (the “Agreement”) between you and Tap VPN. (the “Tap VPN”).
-
-Activation of your account constitutes your agreement to be bound by the Terms and a representation that you are at least eighteen (18) years of age, and that the registration information you have provided is accurate and complete.
-
-Tap VPN may update the Terms from time to time without notice. Any changes in the Terms will be incorporated into a revised Agreement that we will post on the Site. Unless otherwise specified, such changes shall be effective when they are posted. If we make material changes to these Terms, we will aim to notify you via email or when you log in at our Site.
-
-By using Tap VPN
-You agree to comply with all applicable laws and regulations in connection with your use of this service.regulations in connection with your use of this service.</string>
+                                <mutableString key="text">Terms of use
+Whether you are a new or existing user of our products and services, we hope you will take some time to familiarize yourself with our Terms of Use. By using our software and services, you hereby agree to accept these terms. If you do not accept these terms, please do not use our software and services.
+Use of the application
+1. you agree that we are not responsible for third party content that you access using our applications.
+2. You agree that we may discontinue some or all of our services at any time without prior notice to you.
+3. You may not use our applications for unauthorized commercial purposes or use our applications and services for illegal purposes.
+Update
+We may update our Terms of Use from time to time and recommend that you review these Terms of Use periodically for changes.
+Contact us
+If you have any questions about this Privacy Policy, you may contact us using the information below.
+lilin623@hotmail.com</mutableString>
                                 <color key="textColor" red="0.38431372549999998" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

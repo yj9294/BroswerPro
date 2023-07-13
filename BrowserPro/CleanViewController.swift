@@ -36,7 +36,7 @@ class CleanViewController: UIViewController {
     
     func loading() {
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
-            if GADUtil.share.isLoaded(.interstitial), !self.isPresented {
+            if GADUtil.share.isLoadedIngerstitalAD(), !self.isPresented {
                 timer.invalidate()
                 self.isPresented = true
                 GADUtil.share.show(.interstitial, from: self) { _ in

@@ -15,7 +15,6 @@
 		C773449A2A2495E0003C96DE /* LoadingVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77344982A2495E0003C96DE /* LoadingVCViewController.swift */; };
 		C773449D2A25A14C003C96DE /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773449C2A25A14C003C96DE /* BrowserViewController.swift */; };
 		C773449F2A25CBC5003C96DE /* BrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773449E2A25CBC5003C96DE /* BrowserCell.swift */; };
-		C77344A22A25D687003C96DE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C77344A12A25D687003C96DE /* IQKeyboardManagerSwift */; };
 		C77344A42A25D711003C96DE /* BrowserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77344A32A25D711003C96DE /* BrowserUtil.swift */; };
 		C77344A62A25D71B003C96DE /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77344A52A25D71B003C96DE /* AppUtil.swift */; };
 		C77344A82A25E981003C96DE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77344A72A25E981003C96DE /* TabViewController.swift */; };
@@ -25,17 +24,18 @@
 		C77344B02A26055E003C96DE /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77344AF2A26055E003C96DE /* TermsViewController.swift */; };
 		C77344B62A26F654003C96DE /* CleanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77344B52A26F654003C96DE /* CleanViewController.swift */; };
 		C77344B82A283140003C96DE /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77344B72A283140003C96DE /* FirebaseUtil.swift */; };
-		C77344CA2A28412B003C96DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C77344C92A28412B003C96DE /* GoogleService-Info.plist */; };
-		C77CCDB62A2DDB7700FE4FB1 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C77CCDB52A2DDB7700FE4FB1 /* GoogleMobileAds */; };
-		C77CCDB92A2DDC2300FE4FB1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C77CCDB82A2DDC2300FE4FB1 /* FirebaseAnalytics */; };
-		C77CCDBB2A2DDC2300FE4FB1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C77CCDBA2A2DDC2300FE4FB1 /* FirebaseCrashlytics */; };
-		C77CCDBD2A2DDC2300FE4FB1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C77CCDBC2A2DDC2300FE4FB1 /* FirebaseRemoteConfig */; };
-		C77CCDC02A2DDC8B00FE4FB1 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C77CCDBF2A2DDC8B00FE4FB1 /* FacebookAEM */; };
-		C77CCDC22A2DDC8B00FE4FB1 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C77CCDC12A2DDC8B00FE4FB1 /* FacebookBasics */; };
-		C77CCDC42A2DDC8B00FE4FB1 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C77CCDC32A2DDC8B00FE4FB1 /* FacebookCore */; };
-		C77CCDC62A2DE4E200FE4FB1 /* GADUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77CCDC52A2DE4E200FE4FB1 /* GADUtil.swift */; };
 		C77CCDC82A2E08EE00FE4FB1 /* admob.json in Resources */ = {isa = PBXBuildFile; fileRef = C77CCDC72A2E08EE00FE4FB1 /* admob.json */; };
 		C77CCDCA2A2E140F00FE4FB1 /* GADNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77CCDC92A2E140F00FE4FB1 /* GADNativeView.swift */; };
+		C7D521262A5FE45400D894CE /* GADUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D521252A5FE45400D894CE /* GADUtil.swift */; };
+		C7D521292A5FE56A00D894CE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C7D521282A5FE56A00D894CE /* GoogleMobileAds */; };
+		C7D5212C2A5FE77E00D894CE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C7D5212B2A5FE77E00D894CE /* FirebaseAnalytics */; };
+		C7D5212E2A5FE77E00D894CE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C7D5212D2A5FE77E00D894CE /* FirebaseCrashlytics */; };
+		C7D521302A5FE77E00D894CE /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C7D5212F2A5FE77E00D894CE /* FirebaseRemoteConfig */; };
+		C7D521332A5FE80600D894CE /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7D521322A5FE80600D894CE /* FacebookAEM */; };
+		C7D521352A5FE80600D894CE /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7D521342A5FE80600D894CE /* FacebookBasics */; };
+		C7D521372A5FE80600D894CE /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7D521362A5FE80600D894CE /* FacebookCore */; };
+		C7D5213A2A5FE8D100D894CE /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C7D521392A5FE8D100D894CE /* IQKeyboardManagerSwift */; };
+		C7EE49F62A308B7C006B6139 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7EE49F52A308B7C006B6139 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,11 +57,11 @@
 		C77344AF2A26055E003C96DE /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		C77344B52A26F654003C96DE /* CleanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanViewController.swift; sourceTree = "<group>"; };
 		C77344B72A283140003C96DE /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtil.swift; sourceTree = "<group>"; };
-		C77344C92A28412B003C96DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C77344CB2A28424E003C96DE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C77CCDC52A2DE4E200FE4FB1 /* GADUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GADUtil.swift; path = ../../../../../../GADUtil.swift; sourceTree = "<group>"; };
 		C77CCDC72A2E08EE00FE4FB1 /* admob.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = admob.json; sourceTree = "<group>"; };
 		C77CCDC92A2E140F00FE4FB1 /* GADNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeView.swift; sourceTree = "<group>"; };
+		C7D521252A5FE45400D894CE /* GADUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADUtil.swift; sourceTree = "<group>"; };
+		C7EE49F52A308B7C006B6139 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +69,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C77CCDC22A2DDC8B00FE4FB1 /* FacebookBasics in Frameworks */,
-				C77CCDC02A2DDC8B00FE4FB1 /* FacebookAEM in Frameworks */,
-				C77CCDB62A2DDB7700FE4FB1 /* GoogleMobileAds in Frameworks */,
-				C77CCDBB2A2DDC2300FE4FB1 /* FirebaseCrashlytics in Frameworks */,
-				C77344A22A25D687003C96DE /* IQKeyboardManagerSwift in Frameworks */,
-				C77CCDB92A2DDC2300FE4FB1 /* FirebaseAnalytics in Frameworks */,
-				C77CCDBD2A2DDC2300FE4FB1 /* FirebaseRemoteConfig in Frameworks */,
-				C77CCDC42A2DDC8B00FE4FB1 /* FacebookCore in Frameworks */,
+				C7D5212E2A5FE77E00D894CE /* FirebaseCrashlytics in Frameworks */,
+				C7D5213A2A5FE8D100D894CE /* IQKeyboardManagerSwift in Frameworks */,
+				C7D521332A5FE80600D894CE /* FacebookAEM in Frameworks */,
+				C7D521372A5FE80600D894CE /* FacebookCore in Frameworks */,
+				C7D5212C2A5FE77E00D894CE /* FirebaseAnalytics in Frameworks */,
+				C7D521352A5FE80600D894CE /* FacebookBasics in Frameworks */,
+				C7D521292A5FE56A00D894CE /* GoogleMobileAds in Frameworks */,
+				C7D521302A5FE77E00D894CE /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +102,12 @@
 		C77344832A249570003C96DE /* BrowserPro */ = {
 			isa = PBXGroup;
 			children = (
+				C7EE49F52A308B7C006B6139 /* GoogleService-Info.plist */,
 				C77344CB2A28424E003C96DE /* Info.plist */,
 				C77CCDC72A2E08EE00FE4FB1 /* admob.json */,
-				C77344C92A28412B003C96DE /* GoogleService-Info.plist */,
 				C77344A32A25D711003C96DE /* BrowserUtil.swift */,
 				C77344A52A25D71B003C96DE /* AppUtil.swift */,
-				C77CCDC52A2DE4E200FE4FB1 /* GADUtil.swift */,
+				C7D521252A5FE45400D894CE /* GADUtil.swift */,
 				C77CCDC92A2E140F00FE4FB1 /* GADNativeView.swift */,
 				C77344B72A283140003C96DE /* FirebaseUtil.swift */,
 				C77344842A249570003C96DE /* AppDelegate.swift */,
@@ -145,14 +145,14 @@
 			);
 			name = BrowserPro;
 			packageProductDependencies = (
-				C77344A12A25D687003C96DE /* IQKeyboardManagerSwift */,
-				C77CCDB52A2DDB7700FE4FB1 /* GoogleMobileAds */,
-				C77CCDB82A2DDC2300FE4FB1 /* FirebaseAnalytics */,
-				C77CCDBA2A2DDC2300FE4FB1 /* FirebaseCrashlytics */,
-				C77CCDBC2A2DDC2300FE4FB1 /* FirebaseRemoteConfig */,
-				C77CCDBF2A2DDC8B00FE4FB1 /* FacebookAEM */,
-				C77CCDC12A2DDC8B00FE4FB1 /* FacebookBasics */,
-				C77CCDC32A2DDC8B00FE4FB1 /* FacebookCore */,
+				C7D521282A5FE56A00D894CE /* GoogleMobileAds */,
+				C7D5212B2A5FE77E00D894CE /* FirebaseAnalytics */,
+				C7D5212D2A5FE77E00D894CE /* FirebaseCrashlytics */,
+				C7D5212F2A5FE77E00D894CE /* FirebaseRemoteConfig */,
+				C7D521322A5FE80600D894CE /* FacebookAEM */,
+				C7D521342A5FE80600D894CE /* FacebookBasics */,
+				C7D521362A5FE80600D894CE /* FacebookCore */,
+				C7D521392A5FE8D100D894CE /* IQKeyboardManagerSwift */,
 			);
 			productName = BrowserPro;
 			productReference = C77344812A249570003C96DE /* BrowserPro.app */;
@@ -183,10 +183,10 @@
 			);
 			mainGroup = C77344782A249570003C96DE;
 			packageReferences = (
-				C77344A02A25D687003C96DE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				C77CCDB42A2DDB7700FE4FB1 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
-				C77CCDB72A2DDC2300FE4FB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C77CCDBE2A2DDC8B00FE4FB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				C7D521272A5FE56A00D894CE /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
+				C7D5212A2A5FE77E00D894CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C7D521312A5FE80600D894CE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				C7D521382A5FE8D000D894CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = C77344822A249570003C96DE /* Products */;
 			projectDirPath = "";
@@ -203,8 +203,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77CCDC82A2E08EE00FE4FB1 /* admob.json in Resources */,
+				C7EE49F62A308B7C006B6139 /* GoogleService-Info.plist in Resources */,
 				C77344912A249572003C96DE /* LaunchScreen.storyboard in Resources */,
-				C77344CA2A28412B003C96DE /* GoogleService-Info.plist in Resources */,
 				C773448E2A249572003C96DE /* Assets.xcassets in Resources */,
 				C773448C2A249570003C96DE /* Main.storyboard in Resources */,
 			);
@@ -221,13 +221,13 @@
 				C77344A82A25E981003C96DE /* TabViewController.swift in Sources */,
 				C77344B82A283140003C96DE /* FirebaseUtil.swift in Sources */,
 				C773449F2A25CBC5003C96DE /* BrowserCell.swift in Sources */,
+				C7D521262A5FE45400D894CE /* GADUtil.swift in Sources */,
 				C77344AA2A25EB00003C96DE /* TabCell.swift in Sources */,
 				C77344852A249570003C96DE /* AppDelegate.swift in Sources */,
 				C77344A62A25D71B003C96DE /* AppUtil.swift in Sources */,
 				C77344B62A26F654003C96DE /* CleanViewController.swift in Sources */,
 				C77344AC2A25FB4F003C96DE /* SettingViewController.swift in Sources */,
 				C77344A42A25D711003C96DE /* BrowserUtil.swift in Sources */,
-				C77CCDC62A2DE4E200FE4FB1 /* GADUtil.swift in Sources */,
 				C773449D2A25A14C003C96DE /* BrowserViewController.swift in Sources */,
 				C77CCDCA2A2E140F00FE4FB1 /* GADNativeView.swift in Sources */,
 				C773449A2A2495E0003C96DE /* LoadingVCViewController.swift in Sources */,
@@ -377,9 +377,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59CN4J44AC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrowserPro/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
@@ -396,8 +397,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.BrowserPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.searchPro.browsers.fastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -412,9 +414,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59CN4J44AC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrowserPro/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
@@ -431,8 +434,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.BrowserPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.searchPro.browsers.fastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -466,23 +470,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C77344A02A25D687003C96DE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		C77CCDB42A2DDB7700FE4FB1 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
+		C7D521272A5FE56A00D894CE /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quanghits/GoogleMobileAds";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
-		C77CCDB72A2DDC2300FE4FB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		C7D5212A2A5FE77E00D894CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -490,7 +486,7 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		C77CCDBE2A2DDC8B00FE4FB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		C7D521312A5FE80600D894CE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
@@ -498,48 +494,56 @@
 				kind = branch;
 			};
 		};
+		C7D521382A5FE8D000D894CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C77344A12A25D687003C96DE /* IQKeyboardManagerSwift */ = {
+		C7D521282A5FE56A00D894CE /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77344A02A25D687003C96DE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		C77CCDB52A2DDB7700FE4FB1 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C77CCDB42A2DDB7700FE4FB1 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
+			package = C7D521272A5FE56A00D894CE /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
 			productName = GoogleMobileAds;
 		};
-		C77CCDB82A2DDC2300FE4FB1 /* FirebaseAnalytics */ = {
+		C7D5212B2A5FE77E00D894CE /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77CCDB72A2DDC2300FE4FB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = C7D5212A2A5FE77E00D894CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		C77CCDBA2A2DDC2300FE4FB1 /* FirebaseCrashlytics */ = {
+		C7D5212D2A5FE77E00D894CE /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77CCDB72A2DDC2300FE4FB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = C7D5212A2A5FE77E00D894CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		C77CCDBC2A2DDC2300FE4FB1 /* FirebaseRemoteConfig */ = {
+		C7D5212F2A5FE77E00D894CE /* FirebaseRemoteConfig */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77CCDB72A2DDC2300FE4FB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = C7D5212A2A5FE77E00D894CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
 		};
-		C77CCDBF2A2DDC8B00FE4FB1 /* FacebookAEM */ = {
+		C7D521322A5FE80600D894CE /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77CCDBE2A2DDC8B00FE4FB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = C7D521312A5FE80600D894CE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookAEM;
 		};
-		C77CCDC12A2DDC8B00FE4FB1 /* FacebookBasics */ = {
+		C7D521342A5FE80600D894CE /* FacebookBasics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77CCDBE2A2DDC8B00FE4FB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = C7D521312A5FE80600D894CE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookBasics;
 		};
-		C77CCDC32A2DDC8B00FE4FB1 /* FacebookCore */ = {
+		C7D521362A5FE80600D894CE /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C77CCDBE2A2DDC8B00FE4FB1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = C7D521312A5FE80600D894CE /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookCore;
+		};
+		C7D521392A5FE8D100D894CE /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7D521382A5FE8D000D894CE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

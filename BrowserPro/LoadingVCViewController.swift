@@ -42,7 +42,7 @@ class LoadingVCViewController: UIViewController {
     @objc func progressing() {
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] timer in
             guard let self = self else {return}
-            if GADUtil.share.isLoaded(.interstitial) {
+            if GADUtil.share.isLoadedIngerstitalAD() {
                 timer.invalidate()
                 self.widthConstraint.constant = self.view.bounds.width
                 GADUtil.share.show(.interstitial, from: self) { _ in

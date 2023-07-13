@@ -49,7 +49,7 @@ class BrowserViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         willAppear = false
-        GADUtil.share.close(.native)
+        GADUtil.share.disappear(.native)
     }
     
     override func viewDidLayoutSubviews() {

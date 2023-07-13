@@ -34,7 +34,7 @@ class TabViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         willAppear = false
-        GADUtil.share.close(.native)
+        GADUtil.share.disappear(.native)
     }
     
     func addADNotification() {
