@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GADUtil
 
 class LoadingVCViewController: UIViewController {
     
@@ -35,17 +36,17 @@ class LoadingVCViewController: UIViewController {
             self.progressing()
         }
         
-        GADUtil.share.load(.native)
-        GADUtil.share.load(.interstitial)
+        GADUtil.share.load(GADMobPosition.native)
+        GADUtil.share.load(GADMobPosition.interstitial)
     }
     
     @objc func progressing() {
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] timer in
             guard let self = self else {return}
-            if GADUtil.share.isLoadedIngerstitalAD() {
+            if GADUtil.share.isLoaded(GADMobPosition.interstitial) {
                 timer.invalidate()
                 self.widthConstraint.constant = self.view.bounds.width
-                GADUtil.share.show(.interstitial, from: self) { _ in
+                GADUtil.share.show(GADMobPosition.interstitial, from: self) { _ in
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         self.performSegue(withIdentifier: "toBrowserViewController", sender:  nil)
                     }

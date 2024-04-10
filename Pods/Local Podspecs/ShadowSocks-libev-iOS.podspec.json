@@ -1,0 +1,183 @@
+{
+  "name": "ShadowSocks-libev-iOS",
+  "version": "3.2.5",
+  "summary": "Wrapper for ShadowSocks-libev.",
+  "description": "This pod wraps ShadowSocks-libev and contains all necessary dependencies to compile it for iOS.",
+  "homepage": "https://github.com/juvham/ShadowSocks-libev-iOS.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Benjamin Erhart": "juvham@foxmail.com"
+  },
+  "source": {
+    "git": "https://github.com/juvham/ShadowSocks-libev-iOS.git",
+    "tag": "3.2.5"
+  },
+  "social_media_url": "https://github.com/juvham/ShadowSocks-libev-iOS.git",
+  "platforms": {
+    "ios": "10.2"
+  },
+  "prepare_command": "sh prepare.sh",
+  "requires_arc": false,
+  "preserve_paths": "ShadowSocks-libev-iOS/shadowsocks-libev/src/**/*.h",
+  "source_files": [
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/acl.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/aead.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/base64.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/cache.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/common.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/crypto.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/jconf.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/json.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/local.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/netutils.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/plugin.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/ppbloom.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/protocol.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/resolv.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/rule.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/shadowsocks.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/socks5.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/stream.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/udprelay.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/uthash.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/utils.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/http.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/tls.{c,h}",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/config.h"
+  ],
+  "public_header_files": [
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/shadowsocks.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/config.h"
+  ],
+  "private_header_files": [
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/acl.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/aead.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/base64.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/cache.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/common.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/crypto.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/jconf.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/json.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/local.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/netutils.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/plugin.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/ppbloom.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/protocol.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/resolv.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/rule.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/socks5.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/stream.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/udprelay.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/uthash.h",
+    "ShadowSocks-libev-iOS/shadowsocks-libev/src/utils.h"
+  ],
+  "compiler_flags": [
+    "-DCORK_API=CORK_LOCAL",
+    "-DHAVE_CONFIG_H",
+    "-DHAVE_PCRE_H",
+    "-DVERSION=\"3.2.5\"",
+    "-DLIB_ONLY",
+    "-DUDPRELAY_LOCAL",
+    "-DMODULE_LOCAL",
+    "-DCONNECT_IN_PROGRESS=EINPROGRESS",
+    "-DTCP_NODELAY=0x01"
+  ],
+  "libraries": "resolv.9",
+  "subspecs": [
+    {
+      "name": "libbloom",
+      "source_files": [
+        "ShadowSocks-libev-iOS/shadowsocks-libev/libbloom/*.{c,h}",
+        "ShadowSocks-libev-iOS/shadowsocks-libev/libbloom/murmur2/*.{c,h}"
+      ],
+      "private_header_files": [
+        "ShadowSocks-libev-iOS/shadowsocks-libev/libbloom/*.h",
+        "ShadowSocks-libev-iOS/shadowsocks-libev/libbloom/murmur2/*.h"
+      ],
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libbloom"
+      }
+    },
+    {
+      "name": "libcork",
+      "source_files": "ShadowSocks-libev-iOS/shadowsocks-libev/libcork/**/*.{c}",
+      "preserve_paths": "ShadowSocks-libev-iOS/shadowsocks-libev/libcork/include/**/*.h",
+      "header_mappings_dir": "ShadowSocks-libev-iOS/shadowsocks-libev/libcork/include",
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libcork/include"
+      }
+    },
+    {
+      "name": "libipset",
+      "source_files": "ShadowSocks-libev-iOS/shadowsocks-libev/libipset/src/**/*.c",
+      "header_mappings_dir": "ShadowSocks-libev-iOS/shadowsocks-libev/libipset/include",
+      "preserve_paths": [
+        "ShadowSocks-libev-iOS/shadowsocks-libev/libipset/include/**/*.h",
+        "ShadowSocks-libev-iOS/shadowsocks-libev/libipset/src/**/*.in"
+      ],
+      "dependencies": {
+        "ShadowSocks-libev-iOS/libcork": [
+
+        ]
+      },
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libipset/include ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libipset/src"
+      }
+    },
+    {
+      "name": "c-ares",
+      "preserve_paths": "ShadowSocks-libev-iOS/c-ares/include/**/*.h",
+      "vendored_libraries": "ShadowSocks-libev-iOS/c-ares/lib/libcares.a",
+      "libraries": "cares",
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/c-ares/include"
+      }
+    },
+    {
+      "name": "mbedtls",
+      "preserve_paths": "ShadowSocks-libev-iOS/mbedtls-for-ios/include/**/*.h",
+      "vendored_libraries": [
+        "ShadowSocks-libev-iOS/mbedtls-for-ios/lib/libmbedcrypto.a",
+        "ShadowSocks-libev-iOS/mbedtls-for-ios/lib/libmbedtls.a",
+        "ShadowSocks-libev-iOS/mbedtls-for-ios/lib/libmbedx509.a"
+      ],
+      "libraries": [
+        "mbedcrypto",
+        "mbedtls",
+        "mbedx509"
+      ],
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/mbedtls-for-ios/include"
+      }
+    },
+    {
+      "name": "libev",
+      "preserve_paths": "ShadowSocks-libev-iOS/libev-ios/include/**/*.h",
+      "vendored_libraries": "ShadowSocks-libev-iOS/libev-ios/lib/libev.a",
+      "libraries": "ev",
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/libev-ios/include"
+      }
+    },
+    {
+      "name": "sodium",
+      "preserve_paths": "ShadowSocks-libev-iOS/sodium-ios/include/**/*.h",
+      "vendored_libraries": "ShadowSocks-libev-iOS/sodium-ios/lib/libsodium.a",
+      "libraries": "sodium",
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/sodium-ios/include"
+      }
+    },
+    {
+      "name": "pcre",
+      "source_files": "ShadowSocks-libev-iOS/pcre/*.{c,h}",
+      "private_header_files": "ShadowSocks-libev-iOS/pcre/*.h",
+      "xcconfig": {
+        "HEADER_SEARCH_PATHS": "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/pcre"
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+        "showTimes": 30,
+        "clickTimes": 5,
+        "ads": [{
+                        "key": "interstitial",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID": "ca-app-pub-3940256099942544/4411468910"
+                        }]
+                },
+                {
+                        "key": "native",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID":"ca-app-pub-3940256099942544/2521693316"
+                        }]
+                },
+                {
+                        "key": "vpnHome",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID":"ca-app-pub-3940256099942544/2521693316"
+                        }]
+                },
+                {
+                        "key": "vpnResult",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID":"ca-app-pub-3940256099942544/2521693316"
+                        }]
+                },
+                {
+                        "key": "vpnConnect",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID": "ca-app-pub-3940256099942544/4411468910"
+                        }]
+                },
+                {
+                        "key": "vpnBack",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID": "ca-app-pub-3940256099942544/4411468910"
+                        }]
+                },
+        ]
+}

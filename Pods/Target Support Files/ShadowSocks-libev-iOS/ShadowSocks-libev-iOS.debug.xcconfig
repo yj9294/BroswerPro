@@ -1,0 +1,16 @@
+APPLICATION_EXTENSION_API_ONLY = YES
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/ShadowSocks-libev-iOS
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/c-ares/include ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libbloom ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libcork/include ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/libev-ios/include ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libipset/include ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/shadowsocks-libev/libipset/src ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/mbedtls-for-ios/include ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/pcre ${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/sodium-ios/include
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/c-ares/lib" "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/libev-ios/lib" "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/mbedtls-for-ios/lib" "${PODS_ROOT}/ShadowSocks-libev-iOS/ShadowSocks-libev-iOS/sodium-ios/lib"
+OTHER_LDFLAGS = $(inherited) -l"cares" -l"ev" -l"mbedcrypto" -l"mbedtls" -l"mbedx509" -l"resolv.9" -l"sodium"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_DEVELOPMENT_LANGUAGE = ${DEVELOPMENT_LANGUAGE}
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/ShadowSocks-libev-iOS
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

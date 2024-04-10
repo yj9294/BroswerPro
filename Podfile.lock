@@ -1,0 +1,56 @@
+PODS:
+  - CocoaAsyncSocket (7.6.5)
+  - CocoaLumberjack (3.8.5):
+    - CocoaLumberjack/Core (= 3.8.5)
+  - CocoaLumberjack/Core (3.8.5)
+  - PacketProcessor_iOS (0.0.1)
+  - ShadowSocks-libev-iOS (3.2.5):
+    - ShadowSocks-libev-iOS/c-ares (= 3.2.5)
+    - ShadowSocks-libev-iOS/libbloom (= 3.2.5)
+    - ShadowSocks-libev-iOS/libcork (= 3.2.5)
+    - ShadowSocks-libev-iOS/libev (= 3.2.5)
+    - ShadowSocks-libev-iOS/libipset (= 3.2.5)
+    - ShadowSocks-libev-iOS/mbedtls (= 3.2.5)
+    - ShadowSocks-libev-iOS/pcre (= 3.2.5)
+    - ShadowSocks-libev-iOS/sodium (= 3.2.5)
+  - ShadowSocks-libev-iOS/c-ares (3.2.5)
+  - ShadowSocks-libev-iOS/libbloom (3.2.5)
+  - ShadowSocks-libev-iOS/libcork (3.2.5)
+  - ShadowSocks-libev-iOS/libev (3.2.5)
+  - ShadowSocks-libev-iOS/libipset (3.2.5):
+    - ShadowSocks-libev-iOS/libcork
+  - ShadowSocks-libev-iOS/mbedtls (3.2.5)
+  - ShadowSocks-libev-iOS/pcre (3.2.5)
+  - ShadowSocks-libev-iOS/sodium (3.2.5)
+
+DEPENDENCIES:
+  - CocoaAsyncSocket
+  - CocoaLumberjack
+  - PacketProcessor_iOS
+  - ShadowSocks-libev-iOS (from `https://github.com/juvham/ShadowSocks-libev-iOS.git`, tag `master`)
+
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+    - PacketProcessor_iOS
+
+EXTERNAL SOURCES:
+  ShadowSocks-libev-iOS:
+    :git: https://github.com/juvham/ShadowSocks-libev-iOS.git
+    :tag: master
+
+CHECKOUT OPTIONS:
+  ShadowSocks-libev-iOS:
+    :git: https://github.com/juvham/ShadowSocks-libev-iOS.git
+    :tag: master
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
+  PacketProcessor_iOS: de7d72fe740674733f2fcf981efcb5a8bfaaa351
+  ShadowSocks-libev-iOS: 14f635962b69527b58af96e139a6b4b63ec4bf25
+
+PODFILE CHECKSUM: 747f2f31a04656dd7e6b6671b5aa6c242ee9a70a
+
+COCOAPODS: 1.15.0

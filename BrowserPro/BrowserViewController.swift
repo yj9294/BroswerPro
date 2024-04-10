@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import GADUtil
 import IQKeyboardManagerSwift
 import AppTrackingTransparency
 
@@ -28,6 +29,7 @@ class BrowserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addADNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,20 +38,21 @@ class BrowserViewController: UIViewController {
         IQKeyboardManager.shared.enable = true
         refreshStatus()
         addObserver()
-        addADNotification()
         FirebaseUtil.log(event: .homeShow)
         
         ATTrackingManager.requestTrackingAuthorization { _ in
         }
         
-        GADUtil.share.load(.native)
-        GADUtil.share.load(.interstitial)
+        GADUtil.share.load(GADMobPosition.native)
+        GADUtil.share.load(GADMobPosition.interstitial)
+        
+        VPNCountryList.requestRemoteConfig()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         willAppear = false
-        GADUtil.share.disappear(.native)
+        GADUtil.share.disappear(GADMobPosition.native)
     }
     
     override func viewDidLayoutSubviews() {
@@ -71,15 +74,18 @@ class BrowserViewController: UIViewController {
     func addADNotification() {
         NotificationCenter.default.addObserver(forName: .nativeUpdate, object: nil, queue: .main) { [weak self] noti in
             guard let self = self else {return}
-            if let ad = noti.object as? NativeADModel, self.willAppear == true {
-                if self.homeNativeAdImpressionDate.timeIntervalSinceNow < -10 {
-                    self.adView.nativeAd = ad.nativeAd
-                    self.homeNativeAdImpressionDate = Date()
+            if let ad = noti.object as? GADNativeModel, ad.position.rawValue == GADMobPosition.native.rawValue {
+                if self.willAppear {
+                    if self.homeNativeAdImpressionDate.timeIntervalSinceNow < -10 {
+                        self.adView.nativeAd = ad.nativeAd
+                        self.homeNativeAdImpressionDate = Date()
+                    } else {
+                        NSLog("[ad] 10s home 原生广告刷新或数据填充间隔.")
+                        self.adView.nativeAd = nil
+                    }
                 } else {
-                    NSLog("[ad] 10s home 原生广告刷新或数据填充间隔.")
+                    self.adView.nativeAd = nil
                 }
-            } else {
-                self.adView.nativeAd = nil
             }
         }
     }
@@ -114,6 +120,14 @@ extension BrowserViewController {
     @IBAction func clean() {
         hiddenCleanAlert()
         performSegue(withIdentifier: "toCleanViewController", sender: nil)
+    }
+    
+    @IBAction func goVPN() {
+        let sb = UIStoryboard(name: "Main", bundle: .main)
+        let vc = sb.instantiateViewController(withIdentifier: "VPNViewController")
+        let navigation = UINavigationController(rootViewController: vc)
+        navigation.modalPresentationStyle = .fullScreen
+        present(navigation, animated: true)
     }
     
     func search(btn: UIButton) {

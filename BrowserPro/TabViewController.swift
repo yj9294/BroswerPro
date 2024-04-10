@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import GADUtil
 
 class TabViewController: UIViewController {
     
@@ -28,19 +29,19 @@ class TabViewController: UIViewController {
         super.viewWillAppear(animated)
         willAppear = true
         FirebaseUtil.log(event: .tabShow)
-        GADUtil.share.load(.native)
+        GADUtil.share.load(GADMobPosition.native)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         willAppear = false
-        GADUtil.share.disappear(.native)
+        GADUtil.share.disappear(GADMobPosition.native)
     }
     
     func addADNotification() {
         NotificationCenter.default.addObserver(forName: .nativeUpdate, object: nil, queue: .main) { [weak self] noti in
             guard let self = self else {return}
-            if let ad = noti.object as? NativeADModel, self.willAppear == true {
+            if let ad = noti.object as? GADNativeModel, self.willAppear == true {
                 if self.tabNativeAdImpressionDate.timeIntervalSinceNow < -10 {
                     self.adView.nativeAd = ad.nativeAd
                     self.tabNativeAdImpressionDate = Date()

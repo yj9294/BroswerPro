@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import GADUtil
+import TBAUtil
 import Firebase
 import FBSDKCoreKit
 import GoogleMobileAds
@@ -21,15 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        
-        FirebaseApp.configure()
-        
-        FirebaseUtil.requestRemoteConfig()
-        
-        let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [uuid ]
-        
         if let url = connectionOptions.urlContexts.first?.url {
             ApplicationDelegate.shared.application(
                     UIApplication.shared,
@@ -39,10 +32,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 )
         }
         
-        FirebaseUtil.log(property: .local)
-        FirebaseUtil.log(event: .open)
-        FirebaseUtil.log(event: .openCold)
-
+        networkInit()
+        
+        gadInit()
+        
+        tbaInit()
+        
+        firebaseInit()
+        
+        vpnInit()
         
     }
 
@@ -72,9 +70,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         appenterbackground = false
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingVC")
-        window?.rootViewController = vc
-        
+        if !AppUtil.shared.isVPNPermission {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingVC")
+            window?.rootViewController = vc
+        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -83,7 +82,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         appenterbackground = true
     }
+}
 
+extension SceneDelegate {
+    func networkInit() {
+        ReachabilityUtil.shared.startMonitoring()
+        NotificationCenter.default.addObserver(self, selector: #selector(networkUpdated), name: .reachabilityChanged, object: nil)
+    }
+    
+    func firebaseInit() {
+        FirebaseApp.configure()
+        FirebaseUtil.log(property: .local)
+        FirebaseUtil.log(event: .open)
+        FirebaseUtil.log(event: .openCold)
 
+    }
+    
+    @objc func networkUpdated() {
+        GADUtil.share.load(GADMobPosition.interstitial)
+        GADUtil.share.load(GADMobPosition.native)
+    }
+    
+    func gadInit() {
+        GADUtil.initializePositions(GADMobPosition.allCases)
+        GADUtil.share.requestConfig()
+        let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [uuid]
+    }
+    
+    func tbaInit() {
+        
+    }
+    
+    func vpnInit() {
+        VPNUtil.shared.load()
+        VPNUtil.shared.prepareForLoading {
+            debugPrint("[VPN MANAGER] prepareForLoading manager state: \(VPNUtil.shared.managerState), VPN state: \(VPNUtil.shared.vpnState)")
+        }
+        VPNCountryList.requestConfig()
+        VPNCountryList.requestRemoteConfig()
+    }
 }
 

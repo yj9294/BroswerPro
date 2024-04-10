@@ -27,9 +27,7 @@ class GADNativeView: GADNativeAdView {
                 self.adTag.isHidden = false
                 self.placeholder.isHidden = true
                 
-                if let image = nativeAd.images?.first?.image {
-                    self.icon.image =  image
-                }
+                self.icon.image = nativeAd.icon?.image
                 self.title.text = nativeAd.headline
                 self.subTitle.text = nativeAd.body
                 self.install.setTitle(nativeAd.callToAction, for: .normal)

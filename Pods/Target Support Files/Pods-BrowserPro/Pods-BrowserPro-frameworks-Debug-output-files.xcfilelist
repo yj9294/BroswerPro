@@ -1,0 +1,4 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PacketProcessor_iOS.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShadowSocks_libev_iOS.framework

@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-BrowserPro/Pods-BrowserPro-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework
+${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
+${PODS_ROOT}/PacketProcessor_iOS/PacketProcessor_iOS/PacketProcessor_iOS.framework
+${BUILT_PRODUCTS_DIR}/ShadowSocks-libev-iOS/ShadowSocks_libev_iOS.framework

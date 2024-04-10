@@ -1,0 +1,36 @@
+{
+    "natural": [
+    ],
+    "really": 100,
+    "professor": 0,
+    "human": [
+        {
+            "knowledge": "66.42.111.82",
+            "better": 1000,
+            "learn": "Los Angeles",
+            "unit": "US",
+            "network": "United States",
+            "beyond": [
+                {
+                    "focus": "Vzpv23sF4nY6Jut9",
+                    "sister": "chacha20-ietf-poly1305",
+                    "room": 2035
+                }
+            ]
+        },
+        {
+            "knowledge": "144.202.95.174",
+            "better": 1000,
+            "learn": "Seattle",
+            "unit": "US",
+            "network": "United States",
+            "beyond": [
+                {
+                    "focus": "Vzpv23sF4nY6Jut9",
+                    "sister": "chacha20-ietf-poly1305",
+                    "room": 2035
+                }
+            ]
+        }
+    ]
+}

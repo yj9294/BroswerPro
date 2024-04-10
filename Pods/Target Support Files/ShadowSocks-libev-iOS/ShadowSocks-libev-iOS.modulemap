@@ -1,0 +1,6 @@
+framework module ShadowSocks_libev_iOS {
+  umbrella header "ShadowSocks-libev-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

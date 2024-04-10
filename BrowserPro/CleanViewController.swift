@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GADUtil
 
 class CleanViewController: UIViewController {
     
@@ -24,7 +25,7 @@ class CleanViewController: UIViewController {
                 self.cleaned()
             }
         }
-        GADUtil.share.load(.interstitial)
+        GADUtil.share.load(GADMobPosition.interstitial)
     }
     
     func cleaned() {
@@ -36,10 +37,10 @@ class CleanViewController: UIViewController {
     
     func loading() {
         Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
-            if GADUtil.share.isLoadedIngerstitalAD(), !self.isPresented {
+            if GADUtil.share.isLoaded(GADMobPosition.interstitial), !self.isPresented {
                 timer.invalidate()
                 self.isPresented = true
-                GADUtil.share.show(.interstitial, from: self) { _ in
+                GADUtil.share.show(GADMobPosition.interstitial, from: self) { _ in
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         self.cleaned()
                     }
