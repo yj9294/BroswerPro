@@ -35,6 +35,7 @@ class VPNViewController: UIViewController {
     var isConnectManual = false
     var isDisconnectManual = false
     var isConnectAuto = false
+    var connectDate = Date()
     
     var timer: Timer? = nil
     var isPresentInterestitial = false
@@ -76,10 +77,12 @@ class VPNViewController: UIViewController {
                 flyView.image = UIImage(named: "vpn_fly_connected")
                 if isConnectManual {
                     // 进入结果页面
+                    connectDate = Date()
                     showConnectAD(true) {
                         self.toResult(.connected)
                     }
                 }
+                EventRequest.eventRequest(.vpnConnectSuccess, value: ["rot": AppUtil.shared.getVPNConnectCountry.ip])
             case .disconnecting:
                 startAnimation()
                 flyView.image = UIImage(named: "vpn_fly_connected")
@@ -89,12 +92,14 @@ class VPNViewController: UIViewController {
                 stopAnimation()
                 flyView.image = UIImage(named: "vpn_fly")
                 AppUtil.alert("Try it agin.")
+                EventRequest.eventRequest(.vpnConnectError)
             case .disconnected:
                 progress = 1.0
                 stopAnimation()
                 flyView.image = UIImage(named: "vpn_fly")
                 if isDisconnectManual {
                     // 进入结果页面
+                    EventRequest.eventRequest(.vpnDisconnectManual, value: ["duration": "\(abs(connectDate.timeIntervalSinceNow))"])
                     showConnectAD(false) {
                         self.toResult(.disconnected)
                     }
@@ -147,6 +152,7 @@ class VPNViewController: UIViewController {
         if TBACacheUtil.shared.getUserGo() {
             GADUtil.share.load(GADMobPosition.vpnBack, p: GADMobScene.vpnBack)
         }
+        EventRequest.eventRequest(.vpnHome)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -156,10 +162,16 @@ class VPNViewController: UIViewController {
     }
     
     @objc func back() {
-        isPresentBackAD = true
-        GADUtil.share.show(GADMobPosition.vpnBack) { _ in
-            self.dismiss(animated: true)
+        if state == .connecting || state == .disconnecting {
+            return
         }
+        isPresentBackAD = true
+        GADUtil.share.show(GADMobPosition.vpnBack,from: self) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.dismiss(animated: true)
+            }
+        }
+        EventRequest.eventRequest(.vpnBack)
     }
     
     func startAnimation() {
@@ -272,6 +284,7 @@ extension VPNViewController {
     func connect() {
         if VPNUtil.shared.managerState == .idle || VPNUtil.shared.managerState == .error {
             AppUtil.shared.isVPNPermission = true
+            EventRequest.eventRequest(.vpnPermission)
             VPNUtil.shared.create { err in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     AppUtil.shared.isVPNPermission = false
@@ -282,6 +295,7 @@ extension VPNViewController {
                     AppUtil.alert(err.localizedDescription)
                     return
                 }
+                EventRequest.eventRequest(.vpnPermission1)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.pingServer()
                 }
@@ -298,6 +312,7 @@ extension VPNViewController {
             AppUtil.alert("Local network is not turned on.")
             return
         }
+        EventRequest.eventRequest(.vpnConnect)
         if AppUtil.shared.getVPNCountry.isSmart {
             pingAllServers(serverList:AppUtil.shared.getVPNCountryList.allModels()) { serverList in
                 guard let serverList = serverList, !serverList.isEmpty else {
@@ -347,6 +362,7 @@ extension VPNViewController {
 
         let op = ["host": host,"port": port,"method": method,"password": password] as? [String : NSObject]
         VPNUtil.shared.connect(options: op)
+        EventRequest.eventRequest(.vpnDidConnect, value: ["rot": country.ip])
     }
     
     

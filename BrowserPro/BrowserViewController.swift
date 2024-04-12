@@ -22,14 +22,22 @@ class BrowserViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var cleanAlertView: UIView!
     
+    @IBOutlet weak var guideView: UIView!
+    @IBOutlet weak var guideButton: UIButton!
+    
     @IBOutlet weak var adView: GADNativeView!
     var willAppear = false
+    var needShowGuideView: Bool {
+        AppUtil.shared.isShowGuideView && (VPNUtil.shared.vpnState != .connected)
+    }
     
     var homeNativeAdImpressionDate = Date(timeIntervalSinceNow: -11)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addADNotification()
+        guideView.isHidden = true
+        showGuideView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +51,9 @@ class BrowserViewController: UIViewController {
         ATTrackingManager.requestTrackingAuthorization { _ in
         }
         
-        GADUtil.share.load(GADMobPosition.native)
+        if !needShowGuideView {
+            GADUtil.share.load(GADMobPosition.native)
+        }
         GADUtil.share.load(GADMobPosition.interstitial)
         
         VPNCountryList.requestRemoteConfig()
@@ -75,7 +85,7 @@ class BrowserViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: .nativeUpdate, object: nil, queue: .main) { [weak self] noti in
             guard let self = self else {return}
             if let ad = noti.object as? GADNativeModel, ad.position.rawValue == GADMobPosition.native.rawValue {
-                if self.willAppear {
+                if self.willAppear, !needShowGuideView {
                     if self.homeNativeAdImpressionDate.timeIntervalSinceNow < -10 {
                         self.adView.nativeAd = ad.nativeAd
                         self.homeNativeAdImpressionDate = Date()
@@ -122,12 +132,19 @@ extension BrowserViewController {
         performSegue(withIdentifier: "toCleanViewController", sender: nil)
     }
     
-    @IBAction func goVPN() {
+    @IBAction func goVPN(_ statConnect: Bool = false) {
         let sb = UIStoryboard(name: "Main", bundle: .main)
         let vc = sb.instantiateViewController(withIdentifier: "VPNViewController")
         let navigation = UINavigationController(rootViewController: vc)
         navigation.modalPresentationStyle = .fullScreen
         present(navigation, animated: true)
+        if statConnect {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                if let vc = vc as? VPNViewController {
+                    vc.connectDisconnectAction()
+                }
+            }
+        }
     }
     
     func search(btn: UIButton) {
@@ -264,6 +281,49 @@ extension BrowserViewController: WKUIDelegate, WKNavigationDelegate {
         nextButton.isEnabled = webView.canGoForward
         webView.load(navigationAction.request)
         return nil
+    }
+}
+
+// MARK: guide view
+extension BrowserViewController {
+    func showGuideView() {
+        if needShowGuideView {
+            EventRequest.eventRequest(.vpnGuide)
+            guideView.isHidden = false
+            var count = 5
+            self.guideButton.isUserInteractionEnabled = false
+            self.guideButton.setTitle("Skip(\(count))", for: .normal)
+            GADUtil.share.load(GADMobPosition.native)
+            GADUtil.share.load(GADMobPosition.vpnHome)
+            GADUtil.share.load(GADMobPosition.vpnConnect)
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                count -= 1
+                if count == 0 {
+                    timer.invalidate()
+                    self.guideButton.isUserInteractionEnabled = true
+                    self.guideButton.setTitle("Skip", for: .normal)
+                } else {
+                    self.guideButton.isUserInteractionEnabled = false
+                    self.guideButton.setTitle("Skip(\(count))", for: .normal)
+                }
+            }
+        } else {
+            guideView.isHidden = true
+        }
+    }
+    
+    @IBAction func okAction() {
+        EventRequest.eventRequest(.vpnGuideOk)
+        guideView.isHidden = true
+        AppUtil.shared.isShowGuideView = false
+        goVPN(true)
+    }
+    
+    @IBAction func skipAction() {
+        EventRequest.eventRequest(.vpnGuideSkip)
+        guideView.isHidden = true
+        AppUtil.shared.isShowGuideView = false
+        GADUtil.share.load(GADMobPosition.native)
     }
 }
 

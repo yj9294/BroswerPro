@@ -25,6 +25,7 @@ class FirebaseUtil: NSObject {
         #endif
         
         NSLog("[Event] \(event.rawValue) \(params ?? [:])")
+        EventRequest.tbaEventReequest(eventKey: event.rawValue, value: params)
     }
     
     static func log(property: FirebaseProPerty, value: String? = nil) {

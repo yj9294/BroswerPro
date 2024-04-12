@@ -8,7 +8,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.searchPro.browsers.fastApp.test123</string>
+		<string>group.com.searchPro.browsers.fastApp</string>
 	</array>
 </dict>
 </plist>

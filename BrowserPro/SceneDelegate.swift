@@ -42,6 +42,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         vpnInit()
         
+        NSLog("[tba] \(TBACacheUtil.shared.getUUID())")
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -74,6 +76,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingVC")
             window?.rootViewController = vc
         }
+        
+        EventRequest.sessionRequest()
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -108,10 +112,35 @@ extension SceneDelegate {
         GADUtil.share.requestConfig()
         let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [uuid]
+        NotificationCenter.default.addObserver(self, selector: #selector(adImpression), name: .adImpression, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adPaid), name: .adPaid, object: nil)
+    }
+    
+    @objc func adImpression(noti: Notification) {
+        if let ad = noti.object as? GADBaseModel {
+            let result = TBACacheUtil.shared.needUploadFBPrice()
+            if result.0 {
+                AppEvents.shared.logPurchase(amount: result.1.price, currency: result.1.currency)
+            } else {
+                TBACacheUtil.shared.addFBPrice(price: ad.price, currency: ad.currency)
+            }
+        }
+    }
+    
+    @objc func adPaid(noti: Notification) {
+        if let ad = noti.object as? GADBaseModel {
+            EventRequest.tbaADRequest(ad: ad)
+        }
     }
     
     func tbaInit() {
+        EventRequest.preloadPool()
         
+        EventRequest.installRequest()
+        
+        EventRequest.firstOpenRequest()
+        
+        EventRequest.cloakRequest()
     }
     
     func vpnInit() {

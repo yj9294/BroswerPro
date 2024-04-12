@@ -14,6 +14,34 @@
                                 "theAdPriority": 1,
                                 "theAdID": "ca-app-pub-5378320513911255/3945757204"
                         }]
-                }
+                },
+                {
+                        "key": "vpnHome",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID":"ca-app-pub-5378320513911255/1823774364"
+                        }]
+                },
+                {
+                        "key": "vpnResult",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID":"ca-app-pub-5378320513911255/5592145901"
+                        }]
+                },
+                {
+                        "key": "vpnConnect",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID": "ca-app-pub-5378320513911255/7907834972"
+                        }]
+                },
+                {
+                        "key": "vpnBack",
+                        "value": [{
+                                "theAdPriority": 1,
+                                "theAdID": "ca-app-pub-5378320513911255/6949976524"
+                        }]
+                },
         ]
 }

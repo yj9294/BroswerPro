@@ -57,8 +57,10 @@ class VPNResultViewController: UIViewController {
         }
         if state == .connected {
             GADUtil.share.load(GADMobPosition.vpnResult, p: GADMobScene.vpnConnect)
+            EventRequest.eventRequest(.vpnResultConnect)
         } else {
             GADUtil.share.load(GADMobPosition.vpnResult, p: GADMobScene.vpnDisconnect)
+            EventRequest.eventRequest(.vpnResultDisconnect)
         }
     }
     
@@ -74,8 +76,13 @@ class VPNResultViewController: UIViewController {
     
     @objc func back() {
         isPresentBackAD = true
-        GADUtil.share.show(GADMobPosition.vpnBack) { _ in
+        GADUtil.share.show(GADMobPosition.vpnBack,from: self) { _ in
             self.navigationController?.popViewController(animated: true)
+        }
+        if state == .connected {
+            EventRequest.eventRequest(.vpnResultConnceBack)
+        } else {
+            EventRequest.eventRequest(.vpnResultDisconnectBack)
         }
     }
 

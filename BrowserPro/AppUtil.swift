@@ -12,6 +12,7 @@ import UIKit
 class AppUtil: NSObject {
     static let shared = AppUtil()
     
+    var isShowGuideView: Bool = true
     var isDebug: Bool = Bundle.main.bundleIdentifier !=  "com.searchPro.browsers.fastApp"
     
     // MARK: App信息
